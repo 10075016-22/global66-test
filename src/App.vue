@@ -1,6 +1,8 @@
 <template>
   <div class="app-content flex justify-center items-center">
-    <router-view />
+    <div class="container container-fluid">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -9,6 +11,6 @@
   font-family: 'Lato', serif !important;
 }
 .app-content {
-  background-color: #F9F9F9 !important;
+  background-color: #FFF !important;
 }
 </style>
