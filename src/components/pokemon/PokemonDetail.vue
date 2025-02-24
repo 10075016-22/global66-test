@@ -1,6 +1,6 @@
 <template>
     <TransitionRoot as="template" :show="open">
-        <Dialog class="relative z-10" @close="open = false">
+        <Dialog class="relative z-10" @close="open = false" :id="`dialog_${selectedPokemon?.name}`">
             <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="fixed inset-0 bg-gray-500/75 transition-opacity" />
             </TransitionChild>
@@ -39,7 +39,7 @@
                             </div>
                             <!-- Buttons Section -->
                             <div class="bg-gray-50 px-4 py-3 sm:flex sm:justify-between sm:px-6 flex justify-between items-center">
-                                <button class="w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center hover-all ml-3 bg-red-500" @click="onCopyClipboard">
+                                <button class="w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center hover-all ml-3 bg-red-500" @click="onCopyClipboard" id="CopyClipboard">
                                     {{ message }}
                                 </button>
                                 <button class="inline-flex justify-center rounded-md px-3 py-2 font-semibold text-gray-900 cursor-pointer">
@@ -58,7 +58,7 @@
 import { onMounted, ref, watch } from 'vue'
 import FavoriteIcon from '@/components/Favorite.vue';
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { cmpPokemon } from '@/composables/cmpPokemon.ts'
+import { cmpPokemon } from '@/composables/usePokemon'
 import { type Pokemon } from '@/types/pokemon.ts'
 
 const { onGetPokemonDetail, selectedPokemon, cmpTypesSelected } = cmpPokemon()

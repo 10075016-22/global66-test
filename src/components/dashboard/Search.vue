@@ -39,4 +39,11 @@ watch(() => search.value, () => {
     margin-left: -5px;
   }
 }
+
+@media (max-width: 768px) {
+  .input-search {
+    max-width: 90%;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+  }
+}
 </style>

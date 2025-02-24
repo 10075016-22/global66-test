@@ -18,7 +18,7 @@ import Loading from '@/components/Loading.vue'
 
 import type { Pokemon } from '@/types/pokemon'
 
-import { cmpPokemon } from '@/composables/cmpPokemon.ts'
+import { cmpPokemon } from '@/composables/usePokemon'
 import { onMounted, ref} from 'vue'
 
 const { 

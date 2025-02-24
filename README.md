@@ -57,6 +57,11 @@ npm install
 ```bash
 npm run dev
 ```
+
+Si quieres correr los tests
+```bash
+npm run test
+```
 Happy coding :smile
 
 ## Screenshot

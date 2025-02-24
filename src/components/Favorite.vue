@@ -1,5 +1,5 @@
 <template>
-  <span class="pokemon-item__is-fav" :class="{ active: pokemon.isFavorite }" @click="markFavorite(pokemon)">
+  <span class="pokemon-item__is-fav" :id="`favorite_${pokemon.name}`" :class="{ active: pokemon.isFavorite }" @click="markFavorite(pokemon)">
     <svg
       width="26"
       height="26"
