@@ -1,10 +1,10 @@
 <template>
     <div class="footer-content">
         <div class="actions">
-            <button :class="['w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center hover-all', props.selectedButton === 'all' ? 'bg-red-500' : 'bg-[#BFBFBF]']" @click="selectButton('ALL')">
+            <button :class="['w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center', props.selectedButton === 'ALL' ? 'hover-all bg-red-500' : 'bg-[#BFBFBF]']" @click="selectButton('ALL')">
                 <img :src="ListIcon" class="mr-3 icon-button"/> All
             </button>
-            <button :class="['w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center ', props.selectedButton === 'favorites' ? 'bg-red-500' : 'bg-[#BFBFBF]']" @click="selectButton('FAVORITES')">
+            <button :class="['w-70 py-2 px-5 me-2 mb-2 font-medium text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer flex justify-center items-center ', props.selectedButton === 'FAVORITES' ? 'hover-all bg-red-500' : 'bg-[#BFBFBF]']" @click="selectButton('FAVORITES')">
                 <img :src="FavoriteIcon" class="mr-3 icon-button"/> Favorites
             </button>
         </div>
@@ -18,7 +18,7 @@ import FavoriteIcon from '@/assets/favorite.svg';
 const props = defineProps({
     selectedButton: {
         type: String,
-        default: 'all'
+        default: 'ALL'
     }
 });
 

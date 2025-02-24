@@ -11,6 +11,6 @@
   font-family: 'Lato', serif !important;
 }
 .app-content {
-  background-color: #FFF !important;
+  background-color: #F9F9F9 !important;
 }
 </style>

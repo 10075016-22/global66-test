@@ -58,10 +58,10 @@
 import { onMounted, ref, watch } from 'vue'
 import FavoriteIcon from '@/components/Favorite.vue';
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { cmpPokemon } from '@/composables/usePokemon'
+import { usePokemon } from '@/composables/usePokemon'
 import { type Pokemon } from '@/types/pokemon.ts'
 
-const { onGetPokemonDetail, selectedPokemon, cmpTypesSelected } = cmpPokemon()
+const { onGetPokemonDetail, selectedPokemon, cmpTypesSelected } = usePokemon()
 
 const emit = defineEmits(['onClose'])
 const props = defineProps({

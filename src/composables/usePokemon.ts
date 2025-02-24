@@ -2,11 +2,11 @@ import { computed, ref } from "vue";
 import { getPokemonList, getPokemon } from '@/services/pokemonService.ts'
 import { type Pokemon, type PokemonDetail } from '@/types/pokemon.ts'
 
-export const cmpPokemon = () => {
+export const usePokemon = () => {
     const pokemonList = ref<Pokemon[]>([]);
     const selectedPokemon = ref<PokemonDetail | null>(null);
     const loading = ref<boolean>(false);
-    const selectedButton = ref<String>('ALL')
+    const selectedButton = ref('ALL')
     const search = ref<String>('')
 
     const onLoadPokemonList = async () => {

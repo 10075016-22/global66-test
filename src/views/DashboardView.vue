@@ -7,7 +7,11 @@
             <Search @onSearch="onSearch"/>
         </div>
         <List :data="cmpListFiltered" @onFavorite="onFavorite" :key="nKeyRef"/>
-        <Footer @onSelectedButton="onSelectedButton" v-if="cmpListFiltered.length > 0"/>
+        <Footer 
+            v-if="cmpListFiltered.length > 0"
+            :selectedButton="selectedButton"
+            @onSelectedButton="onSelectedButton" 
+        />
     </div>
 </template>
 <script setup lang="ts">
@@ -18,7 +22,7 @@ import Loading from '@/components/Loading.vue'
 
 import type { Pokemon } from '@/types/pokemon'
 
-import { cmpPokemon } from '@/composables/usePokemon'
+import { usePokemon } from '@/composables/usePokemon'
 import { onMounted, ref} from 'vue'
 
 const { 
@@ -28,7 +32,7 @@ const {
     pokemonList, 
     selectedButton, 
     search 
-} = cmpPokemon()
+} = usePokemon()
 
 onMounted(() => onLoadPokemonList())
 const nKeyRef = ref(0)
@@ -45,8 +49,7 @@ const onSearch = (letters: String) => {
 
 const onFavorite = (pokemon: Pokemon) => {
     const index = pokemonList.value.findIndex((item: Pokemon) => item.name === pokemon.name)
-    pokemonList.value[index] = pokemon    
-    nKeyRef.value++
+    pokemonList.value[index] = pokemon
 
 }
 

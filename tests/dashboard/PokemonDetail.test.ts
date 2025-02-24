@@ -34,7 +34,7 @@ vi.mock('@/composables/usePokemon', () => {
   );
 
   return {
-    cmpPokemon: () => ({
+    usePokemon: () => ({
       onGetPokemonDetail: async (name: string) => {
         const data = await mockGetPokemonDetail(name);
         selectedPokemon.value = data;
