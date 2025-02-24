@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul class="list" v-if="data.length > 0">
-      <li v-for="(item, index) in data" :key="index" class="flex justify-between items-center bg-white rounded-lg list-item" @click="selectedPokemon = item">
+    <ul class="list" v-if="props.data.length > 0">
+      <li v-for="(item, index) in props.data" :key="index" class="flex justify-between items-center bg-white rounded-lg list-item" @click="selectedPokemon = item">
         <span class="text-gray-800 font-medium text-item">{{ item.name }}</span>
         <Favorite :pokemon="item" @onFavorite="onFavorite(item)"/>
       </li>

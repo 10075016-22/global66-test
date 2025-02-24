@@ -14,7 +14,7 @@ interface Type {
 
 interface Sprites {
     back_default ?: string,
-    others: {
+    other: {
         dream_world: {
             front_default: string
         },
@@ -30,7 +30,7 @@ export interface PokemonDetail {
     name: string;
     weight: number;
     height: number;
-    sprites: Array<Sprites>;
+    sprites: Sprites;
     stats: Array<any>;
     types: Array<Type>;
 }

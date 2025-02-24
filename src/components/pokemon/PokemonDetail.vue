@@ -19,7 +19,7 @@
                                 <div>
                                     <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                         <div>
-                                            <img :src="selectedPokemon?.sprites?.other['official-artwork']?.front_default" :alt="selectedPokemon?.name" class="pokemon-image">
+                                            <img :src="selectedPokemon?.sprites.other['official-artwork'].front_default" :alt="selectedPokemon?.name" class="pokemon-image">
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@ const message = ref<String>('Share to my friends!')
 
 onMounted(async () => {
    await onGetPokemonDetail(props.pokemon?.name)
-   document.activeElement?.blur(); // en caso que exista algun elemento con el foco activo
+//    document.activeElement?.blur();
 })
 
 const onCopyClipboard = () => {
