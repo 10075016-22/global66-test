@@ -63,9 +63,9 @@ const onClose = () => {
   cursor: pointer;
   transition: all 0.3s;
   &:hover {
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   }
-  padding: 8px 25px 8px 5px;
+  padding: 8px 25px 8px 15px;
 }
 .text-item {
   font-size: 1.375rem;
@@ -82,7 +82,10 @@ const onClose = () => {
   overflow: auto;
   margin-bottom: 15px;
   height: calc(100vh - 220px);
-  padding: 0px 25px;
+  padding: 0px 5px;
+  @media (max-width: 768px) {
+    padding: 0px 25px;
+  }
   &::-webkit-scrollbar {
     width: 8px;
   }
